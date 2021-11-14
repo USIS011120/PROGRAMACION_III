@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr.Burger</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+  <body>
+  
+     <!-- Barra de Navegacion -->
+     <nav class="navbar navbar-expand-md navbar-light bg-info border-3 border-bottom border-danger  sticky-top">
+          <div class="container">
+            <a href="index.html" class="navbar-brand">
+              <div class="badge bg-warning text-wrap" style="width: 8rem;">
+                Mr.Hamburger 
+              </div>
+            
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="MenuNavegacion" class="collapse navbar-collapse">
+              <ul class="navbar-nav ms-3">
+                <li class="nav-item">
+                  <a href="#index.html" class="nav-link">Inicio</a>
+                </li>
+               
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#menu1">Menu 1</a></li>
+                    <li><a class="dropdown-item" href="#menu2">Menu 2</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#bebidas">Bebidas</a></li>
+                  </ul>
+                </li>
+
+                <li class="nav-item">
+                  <a href="comentarios.html" class="nav-link">Comentarios</a>
+                </li>
+                <li class="nav-item"  >
+                  <a href="#" class="nav-link">_______________________________ </a>
+                </li>
+               
+              </ul>
+              <ul class="navbar-nav ms-3" >
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="" aria-label="Search" >
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                  </form>
+                
+                   <li class="nav-item">
+                    <a href="login.html" class="nav-link">Carrito</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="registrar.html" class="nav-link">Registrarse</a>
+                  </li>
+              </ul>
+
+          </div>
+     </nav>
+     
+    <div class="container">
+        <div class="row comentarios justify-content-center">
+            <div class="col-10">
+                <h1 class="text-center">Comentarios</h1>
+                <hr>
+                <div class="row">
+                    <div class="col-10">
+            <form action="" class="form_comentarios d-flex justify-content-end flex-wrap">
+                <textarea name="" id="" placeholder="Comentario"></textarea>
+                <button type="button" class="btn btn-primary">Comentar</button>
+            </form>
+            <div class="comentarios_lista">
+                <div class="comentario">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" alt="" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="col-10">
+                            <div class="comentario_texto">
+                                <h5>Mario Rivera</h5>
+                                <span>Hoy a las 12:00pm</span>
+                                <p>Me encantan sus papas con queso derretido </p>
+                            </div>
+            </div>
+            <div class="comentarios_lista mt-4">
+                <div class="comentario">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="https://png.pngtree.com/png-clipart/20200217/ourlarge/pngtree-young-mother-woman-png-image_2149442.jpg"  width="90"  lang="30"  alt="" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="col-10">
+                            <div class="comentario_texto">
+                                <h5>Tiana Romero</h5>
+                                <span>ayer a las 3:00pm</span>
+                                <p> Las mejores hamburguesas que eh provado </p>
+                            </div>
+            </div>
+                  
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->      
+    </body>
+
+
+    </html>
