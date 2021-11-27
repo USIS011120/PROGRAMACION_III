@@ -17,8 +17,22 @@ crud=crud()
 class servidorBasico(SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
-            self.path = '/index.html'
+            self.path = '/index.html','/imagenes'
             return SimpleHTTPRequestHandler.do_GET(self)
+            
+        elif self.path == '/menu.html':
+            return SimpleHTTPRequestHandler.do_GET(self)
+        elif self.path == '/comentarios.html':
+            return SimpleHTTPRequestHandler.do_GET(self)
+        elif self.path == '/carrito.html':
+            return SimpleHTTPRequestHandler.do_GET(self)
+        elif self.path == '/registrar.html':
+            return SimpleHTTPRequestHandler.do_GET(self)
+           
+           
+           
+
+    
 def do_POST(self):
         if self.path == '':
            Content_Length = int(self.headers['Content-Length'])
