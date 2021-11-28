@@ -17,7 +17,7 @@ crud=crud()
 class servidorBasico(SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
-            self.path = '/index.html','/imagenes'
+            self.path = '/index.html'
             return SimpleHTTPRequestHandler.do_GET(self)
             
         elif self.path == '/menu.html':
@@ -27,6 +27,8 @@ class servidorBasico(SimpleHTTPRequestHandler):
         elif self.path == '/carrito.html':
             return SimpleHTTPRequestHandler.do_GET(self)
         elif self.path == '/registrar.html':
+            return SimpleHTTPRequestHandler.do_GET(self)
+        elif self.path == '/index.html':
             return SimpleHTTPRequestHandler.do_GET(self)
            
            
