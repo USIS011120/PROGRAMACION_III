@@ -26,9 +26,11 @@ class servidorBasico(SimpleHTTPRequestHandler):
             return SimpleHTTPRequestHandler.do_GET(self)
         elif self.path == '/carrito.html':
             return SimpleHTTPRequestHandler.do_GET(self)
-        elif self.path == '/registrar.html':
+        elif self.path == '/iniciar.html':
             return SimpleHTTPRequestHandler.do_GET(self)
         elif self.path == '/index.html':
+            return SimpleHTTPRequestHandler.do_GET(self)
+        elif self.path == '/regi.html':
             return SimpleHTTPRequestHandler.do_GET(self)
            
            
