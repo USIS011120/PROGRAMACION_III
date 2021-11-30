@@ -3,7 +3,7 @@ import mysql.connector
 class crud:
     def __init__(self):
         self.conexion= mysql.connector.connect(user='root', password='roger',
-                                           host='localhost' ,database='db_mrHamburger')
+                                           host='localhost' ,database='db_mrhamburger')
         if self.conexion.is_connected():
             print("Conexion exitosa a la base de datos")
         else:

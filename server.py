@@ -1,5 +1,4 @@
 from urllib import parse
-
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import json
 
@@ -17,11 +16,8 @@ class servidorBasico(SimpleHTTPRequestHandler):
         else:
             return SimpleHTTPRequestHandler.do_GET(self)
            
-           
-
+    def do_POST(self):
     
-def do_POST(self):
-
            Content_Length = int(self.headers['Content-Length'])
            data = self.rfile.read(Content_Length)
            data = data.decode('utf-8')

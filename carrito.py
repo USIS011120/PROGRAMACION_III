@@ -1,6 +1,6 @@
-import server
+import conexion
 
-db = server.crud()
+db = conexion.crud()
 
 
 class carrito:
@@ -11,8 +11,8 @@ class carrito:
     def administrar_carrito(self, contenido):
         try:
             if contenido["accion"]=="nuevo":
-                sql = "INSERT INTO carrito (imagen, nombre, precio) VALUES (%s, %s, %s)"
-                val = (contenido["imagen"], contenido["nombre"], contenido["precio"])
+                sql = "INSERT INTO carrito (Imagen, nombre, precio) VALUES (%s, %s, %s)"
+                val = (contenido["Imagen"], contenido["nombre"], contenido["precio"])
 
             elif contenido["accion"]=="modificar":
                 sql = "UPDATE alumnos SET codigo=%s, nombre=%s, telefono=%s WHERE idAlumno=%s"

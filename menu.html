@@ -83,7 +83,7 @@
           <div class="card" >
             <img src="https://dam.cocinafacil.com.mx/wp-content/uploads/2019/05/hamburguesa-al-carbon-clasica.png" id="img1" data-imagen="https://dam.cocinafacil.com.mx/wp-content/uploads/2019/05/hamburguesa-al-carbon-clasica.png" height="150px" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title" id="nombre1" data-nombre="hamburguesa-al-carbon-clasica">HAMBURGUESA AL CARBÓN CLÁSICA</h5>
+              <h5 class="card-title" id="nombre1" data-nombre="hamburguesa al carbon clasica">HAMBURGUESA AL CARBÓN CLÁSICA</h5>
               <p class="card-text">INGREDIENTES
                 mayonesa,
                 pechuga de pollo fileteada,
@@ -362,10 +362,10 @@
         
 
 let accion = $("#boton").data("accion"),
-imagen = $("#img1").data("imagen"),
-nombre = $("nombre1").data("nombre");
-precio = $("#p1").data("precio"),
-datos = {accion, imagen, nombre, precio};
+Imagen = "imagen",
+nombre = "Hamburguesa cladica";
+precio = "7.00$",
+datos = {accion, Imagen, nombre, precio};
 $.post("http://localhost:3006/carrito",JSON.stringify(datos), (respuesta, status)=>{
 
     $("#msgComentario").removeClass("d-none").text(respuesta.resp);
