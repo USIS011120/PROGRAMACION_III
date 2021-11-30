@@ -4,9 +4,10 @@ from urllib import parse
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import mysql.connector 
 import json
+import carrito
 class crud:
     def __init__(self):
-        self.conexion= mysql.connector.connect(user='root', password='admin',
+        self.conexion= mysql.connector.connect(user='root', password='roger',
                                            host='localhost' ,database='db_mrHamburger')
         if self.conexion.is_connected():
             print("Conexion exitosa a la base de datos")
@@ -38,12 +39,21 @@ class servidorBasico(SimpleHTTPRequestHandler):
 
     
 def do_POST(self):
-        if self.path == '':
+
            Content_Length = int(self.headers['Content-Length'])
            data = self.rfile.read(Content_Length)
            data = data.decode('utf-8')
            data = parse.unquote(data)
-           print(data)
+           data = json.loads(data)
+
+           if  self.path == '/carrito':
+                resp = carrito.administrar_carrito(data)
+
+           self.send_response(200)
+           self.end_headers()
+           self.wfile.write(json.dumps(dict(resp=resp)).encode('utf-8'))
+        
+
 
 print('Servidor iniciado en el puerto 3006')
 servidor = HTTPServer(('localhost', 3006), servidorBasico)

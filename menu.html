@@ -81,19 +81,22 @@
       <div class="row">
         <div class="col-md-4" align-items-stretch>
           <div class="card" >
-            <img src="https://dam.cocinafacil.com.mx/wp-content/uploads/2019/05/hamburguesa-al-carbon-clasica.png" height="150px" class="card-img-top" alt="...">
+            <img src="https://dam.cocinafacil.com.mx/wp-content/uploads/2019/05/hamburguesa-al-carbon-clasica.png" id="img1" data-imagen="https://dam.cocinafacil.com.mx/wp-content/uploads/2019/05/hamburguesa-al-carbon-clasica.png" height="150px" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">HAMBURGUESA AL CARBÓN CLÁSICA</h5>
+              <h5 class="card-title" id="nombre1" data-nombre="hamburguesa-al-carbon-clasica">HAMBURGUESA AL CARBÓN CLÁSICA</h5>
               <p class="card-text">INGREDIENTES
                 mayonesa,
                 pechuga de pollo fileteada,
                 ½ cebolla morada 
                 col rallada ,zanahoria rallada
                 </p>
-                <p class="card-text lead"><span class="badge bg-secondary">$7.00 USD</span></p>
-              <button type="button" class="btn btn-primary">Añadir</button>
+                <p class="card-text lead" id="p1" data-precio="$7.00 USD"><span class="badge bg-secondary">$7.00 USD</span></p>
+              <button type="button" class="btn btn-primary" id="boton" data-accion="nuevo">Añadir</button>
             </div>
           </div>
+          <div class="row g-2">
+            <div id="msgComentario" class="alert alert-success d-none" role="alert"></div>
+        </div>
         </div>
         <div class="col-md-4" align-items-stretch>
           <div class="card h-100" >
@@ -354,8 +357,41 @@
         </div>
       </div>
     </div>
+    <script>
+      document.getElementById("boton").addEventListener("click",()=>{
+        
+
+let accion = $("#boton").data("accion"),
+imagen = $("#img1").data("imagen"),
+nombre = $("nombre1").data("nombre");
+precio = $("#p1").data("precio"),
+datos = {accion, imagen, nombre, precio};
+$.post("http://localhost:3006/carrito",JSON.stringify(datos), (respuesta, status)=>{
+
+    $("#msgComentario").removeClass("d-none").text(respuesta.resp);
+
+    if( respuesta.resp.indexOf("exito") >=0 ){
+    
+        $("#msgComentario")
+            .removeClass("alert-danger")
+            .addClass("alert-success");
+    } else {
+        $("#msgComentario")
+            .removeClass("alert-success")
+            .addClass("alert-danger");
+    }
+    setTimeout(()=>{
+        $("#msgComentario").addClass("d-none");
+    },5000);
+    }, "json");
+
+      });
+
+    </script>
 
 
+    <script src="jquery.js" ></script>
+    <script src="script.js" ></script>
    </body>
 
 
