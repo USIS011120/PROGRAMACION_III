@@ -12,6 +12,13 @@ class servidorBasico(SimpleHTTPRequestHandler):
         if self.path == '/':
             self.path = '/index.html'
             return SimpleHTTPRequestHandler.do_GET(self)
+
+        elif self.path == '/consultar-carrito':
+            resp = carrito.consultar_carrito()
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(json.dumps(dict(resp=resp)).encode('utf-8'))
+            
         
         else:
             return SimpleHTTPRequestHandler.do_GET(self)

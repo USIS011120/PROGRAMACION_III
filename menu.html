@@ -363,7 +363,7 @@
 
 let accion = $("#boton").data("accion"),
 Imagen = $("#img1").data("imagen"),
-nombre = $("nombre1").data("nombre");
+nombre = $("#nombre1").data("nombre");
 precio = $("#p1").data("precio"),
 datos = {accion, Imagen, nombre, precio};
 $.post("http://localhost:3006/carrito",JSON.stringify(datos), (respuesta, status)=>{
