@@ -1,39 +1,21 @@
-from typing import ContextManager
 from urllib import parse
 
 from http.server import HTTPServer, SimpleHTTPRequestHandler
-import mysql.connector 
 import json
+
 import carrito
-class crud:
-    def __init__(self):
-        self.conexion= mysql.connector.connect(user='root', password='roger',
-                                           host='localhost' ,database='db_mrHamburger')
-        if self.conexion.is_connected():
-            print("Conexion exitosa a la base de datos")
-        else:
-            print("Conexion fallida")
-crud=crud()
+
+carrito = carrito.carrito()
+
 
 class servidorBasico(SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
             self.path = '/index.html'
             return SimpleHTTPRequestHandler.do_GET(self)
-            
-        elif self.path == '/menu.html':
+        
+        else:
             return SimpleHTTPRequestHandler.do_GET(self)
-        elif self.path == '/comentarios.html':
-            return SimpleHTTPRequestHandler.do_GET(self)
-        elif self.path == '/carrito.html':
-            return SimpleHTTPRequestHandler.do_GET(self)
-        elif self.path == '/iniciar.html':
-            return SimpleHTTPRequestHandler.do_GET(self)
-        elif self.path == '/index.html':
-            return SimpleHTTPRequestHandler.do_GET(self)
-        elif self.path == '/regi.html':
-            return SimpleHTTPRequestHandler.do_GET(self)
-           
            
            
 

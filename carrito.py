@@ -3,7 +3,7 @@ import server
 db = server.crud()
 
 
-class usuarios:
+class carrito:
     def consultar_carrito(self):
         sql = "SELECT * FROM carrito"
         return db.consultar(sql)
