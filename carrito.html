@@ -119,6 +119,7 @@
                             respuesta.resp.forEach(pedidos => {
                                 
                                 let div = document.createElement("DIV");
+                                let img = document.createElement("IMG");
                                 let div1 = document.createElement("DIV");
                                 let div3 = document.createElement("DIV");
                                 let div4 = document.createElement("DIV");
@@ -126,6 +127,7 @@
                                 let h5 = document.createElement("h5");
                                 let comentario = document.createElement("P");
                                 div.classList.add("container-comments");
+                                img.classList.add("img");
                                 div1.classList.add("comments");
                                 div3.classList.add("info-comments");
                                 div4.classList.add("header");
@@ -133,6 +135,8 @@
                                 h5.classList.add("h5")
                                 comentario.classList.add("p");
                                 comentario.textContent = pedidos.nombre;
+                                img.setAttribute("src", pedidos.Imagen);
+                                div.appendChild(img);
                                 div.appendChild(div1);
                                 div1.appendChild(div3);
                                 div3.appendChild(div4);
