@@ -82,31 +82,22 @@
                     <div class="row">
                         <div class="col-2">
                             <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200" alt="" class="img-fluid rounded-circle">
-                        </div>
+                          </div>
                         <div class="col-10">
                             <div class="comentario_texto">
                                 <h5>Mario Rivera</h5>
                                 <span>Hoy a las 12:00pm</span>
                                 <p>Me encantan sus papas con queso derretido </p>
-                            </div>
+                              </div>
+                          </div>
+                
+                      </div>
+                  </div>
+              </div>
+                  </div>
+                </div>
             </div>
-            <div class="comentarios_lista mt-4">
-                <div class="comentario">
-                    <div class="row">
-                        <div class="col-2">
-                            <img src="https://png.pngtree.com/png-clipart/20200217/ourlarge/pngtree-young-mother-woman-png-image_2149442.jpg"  width="90"  lang="30"  alt="" class="img-fluid rounded-circle">
-                        </div>
-                        <div class="col-10">
-                            <div class="comentario_texto">
-                                <h5>Tiana Romero</h5>
-                                <span>ayer a las 3:00pm</span>
-                                <p> Las mejores hamburguesas que eh provado </p>
-                            </div>
-            </div>
-                  
         </div>
-        </div>
-    </div>
     </div>
 
 
@@ -116,7 +107,119 @@
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
-    <!-- JavaScript Bundle with Popper -->      
+    <!-- JavaScript Bundle with Popper -->   
+    <script>
+      window.onload = function cargarcomentarios(){
+    $.get("http://localhost:3001/consultar-comentarios",(respuesta, status)=>{
+                        if(respuesta.resp.length>0){
+
+                            respuesta.resp.forEach(comentarios => {
+                                
+                                let div = document.createElement("DIV");
+                                let div1 = document.createElement("DIV");
+                                let div3 = document.createElement("DIV");
+                                let div4 = document.createElement("DIV");
+                                let h4 = document.createElement("h4");
+                                let h5 = document.createElement("h5");
+                                let comentario = document.createElement("P");
+                                div.classList.add("container-comments");
+                                div1.classList.add("comments");
+                                div3.classList.add("info-comments");
+                                div4.classList.add("header");
+                                h4.classList.add("h4");
+                                h5.classList.add("h5")
+                                comentario.classList.add("p");
+                                comentario.textContent = comentarios.texto;
+                                div.appendChild(div1);
+                                div1.appendChild(div3);
+                                div3.appendChild(div4);
+                                div3.appendChild(comentario);
+                                div4.appendChild(h4);
+                                div4.appendChild(h5);
+                                h4.textContent="Duma Zelaya";
+                                h5.textContent="COMENTARIO POSITIVO";
+                                document.querySelector(".container__caja").appendChild(div);
+                    });
+                    }else{
+                    $("#msgComentario")
+                            .removeClass("alert-success")
+                            .addClass("alert-danger");
+                    }
+                    setTimeout(()=>{
+                        $("#msgComentario").addClass("d-none");
+                    },5000);
+                    }, "json");
+    }
+
+    document.getElementById("button").addEventListener("click",()=>{
+
+let accion = $("#button").data("accion"),
+id_comentario = $("#button").data("idcomentario"),
+texto = $("#text").val(),
+id_usuarios = "4";
+id_res = $("#busqueda").data("res"),
+tipo_comentario = "COMENTARIO POSITIVO",
+datos = {accion, id_comentario, texto, id_usuarios, id_res, tipo_comentario};
+$.post("http://localhost:3001/comentarios",JSON.stringify(datos), (respuesta, status)=>{
+
+    $("#msgComentario").removeClass("d-none").text(respuesta.resp);
+
+    if( respuesta.resp.indexOf("exito") >=0 ){
+    
+        $("#msgComentario")
+            .removeClass("alert-danger")
+            .addClass("alert-success");
+    } else {
+        $("#msgComentario")
+            .removeClass("alert-success")
+            .addClass("alert-danger");
+    }
+    setTimeout(()=>{
+        $("#msgComentario").addClass("d-none");
+    },5000);
+    }, "json");
+
+
+    agregarComentario(document.getElementById("text").value);
+    });
+            
+
+const agregarComentario = text =>{
+
+let div = document.createElement("DIV");
+let div1 = document.createElement("DIV");
+let div3 = document.createElement("DIV");
+let div4 = document.createElement("DIV");
+let h4 = document.createElement("h4");
+let h5 = document.createElement("h5");
+let comentario = document.createElement("P");
+div.classList.add("container-comments");
+div1.classList.add("comments");
+div3.classList.add("info-comments");
+div4.classList.add("header");
+h4.classList.add("h4");
+h5.classList.add("h5")
+comentario.classList.add("p");
+comentario.innerHTML = text;
+div.appendChild(div1);
+div1.appendChild(div3);
+div3.appendChild(div4);
+div3.appendChild(comentario);
+div4.appendChild(h4);
+div4.appendChild(h5);
+h4.textContent="Duma Zelaya";
+h5.textContent="COMENTARIO POSITIVO";
+document.querySelector(".container__caja").appendChild(div);
+document.getElementById("text").value = "";
+
+}
+               
+            
+
+            
+
+           
+    </script>   
     </body>
 
 
