@@ -66,103 +66,53 @@
           </div>
      </nav>
      <!----------------------------------------- Carrucel --------------------------------------------->
-     
+     <div class="container">
+      <h1 class="text-center">Carrito</h1>
+      <hr>
 
-  <div class="continer text-center"  >
-    <div class="text-justify"> 
-      <div class="text-decoration-none" >
-        <div class="container container-web-page">
-          <h3 class="font-weight-bold poppins-regular text-uppercase">Carrito de compras</h3>
-          <hr>
-      </div>
-      </div>
-    </div>
-  </div>
-<!----------------------------------------- Busqueda --------------------------------------------->
-
-     <div class="card text-white  bg-info mb-3" id="cardBuscarAlumno">
-      <div class="card-header">
-         Compras pendientes
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" data-bs-target="#cardBuscarAlumno" aria-label="Close"></button>
-      </div>
-      <div class="card-body">
-          <table id="tblBuscarAlumnos" class="table ttable-light table-hover table-sm">
-              <thead>
-                  <tr>
-                      <th colspan="4">
-                          <input class="form-control" placeholder="Buscar" type="text" 
-                              name="txtBuscarcompra" id="txtBuscarAlumnos">
-                      </th>
-                  </tr>
-                  <tr>
-                      <th>Nombre del platillo o bedida</th>
-                   
-                      <th></th>
-                  </tr>
-              </thead>
-              <tbody></tbody>
+      <div class="my-5">
+          <h4>Carrito de compras</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Item</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Acción</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody id="items"></tbody>
+            <tfoot>
+              <tr id="footer-carrito">
+                  <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+              </tr>
+            </tfoot>
           </table>
-      </div>
+        </div>
+
+      <div class="row" id="contenedor-productos"></div>
+
+
   </div>
-  <div class="container">
-    <div class="container__caja">
-        
-    </div>
-</div>
 
-  <script>
+  <template id="template-footer">
+      <th scope="row" colspan="2">Total productos</th>
+      <td>10</td>
+      <td>
+          <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+              vaciar todo
+          </button>
+      </td>
+      <td class="font-weight-bold">$ <span>5000</span></td>
+  </template>
 
-   window.onload = function cargarcarrito(){
-    $.get("http://localhost:3006/consultar-carrito",(respuesta, status)=>{
-                        if(respuesta.resp.length>0){
+ 
 
-                            respuesta.resp.forEach(pedidos => {
-                                
-                                let div = document.createElement("DIV");
-                                let img = document.createElement("IMG");
-                                let div1 = document.createElement("DIV");
-                                let div3 = document.createElement("DIV");
-                                let div4 = document.createElement("DIV");
-                                let h4 = document.createElement("h4");
-                                let h5 = document.createElement("h5");
-                                let comentario = document.createElement("P");
-                                div.classList.add("container-comments");
-                                img.classList.add("img");
-                                div1.classList.add("comments");
-                                div3.classList.add("info-comments");
-                                div4.classList.add("header");
-                                h4.classList.add("h4");
-                                h5.classList.add("h5")
-                                comentario.classList.add("p");
-                                comentario.textContent = pedidos.nombre;
-                                img.setAttribute("src", pedidos.Imagen);
-                                div.appendChild(img);
-                                div.appendChild(div1);
-                                div1.appendChild(div3);
-                                div3.appendChild(div4);
-                                div3.appendChild(comentario);
-                                div4.appendChild(h4);
-                                div4.appendChild(h5);
-                                h4.textContent="Pedido";
-                                h5.textContent=pedidos.precio;
-                                document.querySelector(".container__caja").appendChild(div);
-                    });
-                    }else{
-                    $("#msgComentario")
-                            .removeClass("alert-success")
-                            .addClass("alert-danger");
-                    }
-                    setTimeout(()=>{
-                        $("#msgComentario").addClass("d-none");
-                    },5000);
-                    }, "json");
-    }
 
-  </script>
 
-  <script src="js/jquery.js" ></script>
-  <script src="js/script.js" ></script>
 
+     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <div class="border-top py-4">
       <div class="row">
@@ -178,6 +128,7 @@
       </div>
     </div>
 
+    <script src="app.js"></script>
    </body>
 
 

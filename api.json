@@ -1,0 +1,92 @@
+[
+    {
+        "precio": 7.00,
+        "id": 1,
+        "title": "HAMBURGUESA AL CARBÓN CLÁSICA",
+        "thumbnailUrl": "https://dam.cocinafacil.com.mx/wp-content/uploads/2019/05/hamburguesa-al-carbon-clasica.png"
+    },
+    {
+        "precio": 8.00,
+        "id": 2,
+        "title": "MINIHAMBURGUESAS BBQ",
+        "thumbnailUrl": "https://dam.cocinafacil.com.mx/wp-content/uploads/2018/05/minihamburguesas-bbq.jpg"
+    },
+    {
+        "precio": 10.00,
+        "id": 3,
+        "title": "POLLO CRUNCHY Y GUACAMOLE",
+        "thumbnailUrl": "https://dam.cocinafacil.com.mx/wp-content/uploads/2018/04/Hamburguesa-de-pollo-crunchy.jpg"
+    },
+    {
+        "precio": 7.00,
+        "id": 4,
+        "title": "Nachos-con-queso-y-chile",
+        "thumbnailUrl": "https://phantom-marca.unidadeditorial.es/7f9e28750873ed095ba5d174cb285fe2/f/jpg/assets/multimedia/imagenes/2020/12/19/16084177251138.png"
+    },
+    {
+        "precio": 8.00,
+        "id": 5,
+        "title": "HAMBURGUESA AL CARBÓN CLÁSICA",
+        "thumbnailUrl": "https://static3.diariovasco.com/www/multimedia/202009/08/media/cortadas/NACHOS_SUPREMOSok-RiKPHZ2rqDj8cNF2N3X127N-624x385@Diario%20Vasco.jpg"
+    },
+    {
+        "precio": 15.00,
+        "id": 7,
+        "title": "HAMBURGUESA DE CANGREJO CON CAMARÓN AL AJILLO",
+        "thumbnailUrl": "https://dam.cocinafacil.com.mx/wp-content/uploads/2020/02/hamburguesa-de-cangrejo.jpg"
+    },
+    {
+        "precio": 1.50,
+        "id": 8,
+        "title": "Papas Fritas",
+        "thumbnailUrl": "https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/elgranchef/C/Como-hacer-papas-fritas-crujientes-000.jpg"
+    },
+    {
+        "precio": 5.00,
+        "id": 9,
+        "title": "Ensalada Cesar",
+        "thumbnailUrl": "https://cdn.colombia.com/gastronomia/2011/08/19/ensalada-cesar-3403.jpg"
+    },
+    {
+        "precio": 1.00,
+        "id": 10,
+        "title": "Queso Rallado",
+        "thumbnailUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm3fbjU-t8xUzQXGP9bsq1jVjwEBj3-klPph-Irc9WI5rgITswvyhxxOVkNRs9uLnD-gs&usqp=CAU"
+    },
+    {
+        "precio": 4.00,
+        "id": 11,
+        "title": "Papas con Queso fundido",
+        "thumbnailUrl": "https://cdn7.kiwilimon.com/recetaimagen/15783/640x426/th5-640x426-7816.jpg.webp"
+    },   
+    {
+        "precio": 7.00,
+        "id": 12,
+        "title": "HAMBURGUESA DE RES",
+        "thumbnailUrl": "https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2020/11/receta-de-carne-para-hamburguesas-jugosas-caseras.jpg"
+    },  
+    {
+        "precio": 6.00,
+        "id": 13,
+        "title": "HAMBURGUESA AL CARBÓN CLÁSICA",
+        "thumbnailUrl": "https://www.clarin.com/img/2021/06/17/LC25eDtCT_1256x620__1.jpg"
+    },  
+    {
+        "precio": 1.50,
+        "id": 14,
+        "title": "Limonada Rosada",
+        "thumbnailUrl": "https://www.cardamomo.news/__export/1614381418046/sites/debate/img/2021/02/26/bebida-de-limoxn-y-fresa_crop1614381155947_crop1614381193346.jpeg_976912859.jpeg"
+    },  
+    {
+        "precio": 1.50,
+        "id": 15,
+        "title": "Te",
+        "thumbnailUrl": "https://images.squarespace-cdn.com/content/v1/55c5ea4ce4b0ac808925b954/1597123806710-X1E6NRQGY41JLG5GZHBI/Lipton+Ice+Tea.jpg"
+    },  
+    {
+        "precio": 1.00,
+        "id": 16,
+        "title": "Agua",
+        "thumbnailUrl": "https://media.istockphoto.com/photos/bottle-of-spring-water-picture-id185072125?k=20&m=185072125&s=612x612&w=0&h=QM7Ejzdq_hGjtW6iI8i7Nkm1EW8VuITy4lzikfeaRVE="
+    }
+]
