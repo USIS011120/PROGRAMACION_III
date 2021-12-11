@@ -4,9 +4,11 @@ import json
 
 import carrito
 import comentario
+import usuario
 
 carrito = carrito.carrito()
 comentario = comentario.comentarios()
+usuario = usuario.usuarios()
 
 class servidorBasico(SimpleHTTPRequestHandler):
     def do_GET(self):
@@ -24,7 +26,11 @@ class servidorBasico(SimpleHTTPRequestHandler):
             self.send_response(200)
             self.end_headers()
             self.wfile.write(json.dumps(dict(resp=resp)).encode('utf-8'))
-            
+        elif self.path == '/consultar-usuario':
+            resp = usuario.consultar_usuario()
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(json.dumps(dict(resp=resp)).encode('utf-8'))
         
         else:
             return SimpleHTTPRequestHandler.do_GET(self)
@@ -39,6 +45,8 @@ class servidorBasico(SimpleHTTPRequestHandler):
             resp = carrito.administrar_carrito(data)
         elif self.path == '/comentarios':
             resp = comentario.administrar_comentario(data)
+        elif self.path == '/usuario':
+            resp = usuario.administrar_usuario(data)
         self.send_response(200)
         self.end_headers()
         self.wfile.write(json.dumps(dict(resp=resp)).encode('utf-8'))
